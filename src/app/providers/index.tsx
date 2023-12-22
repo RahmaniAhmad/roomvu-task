@@ -1,5 +1,6 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "react-query";
 import { ReduxProvider } from "./reduxProvider";
 import { ThemeProvider } from "./themeProvider";
 
@@ -8,9 +9,12 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
+  const queryClient = new QueryClient();
   return (
-    <ReduxProvider>
-      <ThemeProvider>{children}</ThemeProvider>
-    </ReduxProvider>
+    <QueryClientProvider client={queryClient}>
+      <ReduxProvider>
+        <ThemeProvider>{children}</ThemeProvider>
+      </ReduxProvider>
+    </QueryClientProvider>
   );
 }

@@ -17,6 +17,12 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.text};
     transition: background-color 0.3s, color 0.3s;
   }
+  .link{
+    color: ${(props) => props.theme.linkColor};
+  }
+  .first-link{
+    color: ${(props) => props.theme.firstLinkColor};
+  }
 `;
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
