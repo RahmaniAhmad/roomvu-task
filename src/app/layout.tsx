@@ -25,7 +25,7 @@ export default function RootLayout({
               marginLeft: "auto",
               marginRight: "auto",
               maxWidth: "42rem",
-              padding: "1rem",
+              padding: "0 1rem",
             }}
           >
             <header style={{ padding: 2 }}>
