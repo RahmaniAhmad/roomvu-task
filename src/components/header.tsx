@@ -1,20 +1,16 @@
 "use client";
 
 import styled from "styled-components";
-import ThemeToggle from "./themeToggle";
 import Link from "next/link";
+import ThemeToggleSwitch from "./themeToggleSwitch";
+
 const HeaderWrapper = styled.div`
   padding: 10px 0 10px 0;
 `;
-const HeaderRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 0;
-`;
+
 const Header = () => {
   return (
-    <div style={{ padding: "10px" }}>
+    <HeaderWrapper>
       <div
         style={{
           display: "flex",
@@ -23,7 +19,7 @@ const Header = () => {
           padding: "10px 0 10px 0",
         }}
       >
-        <ThemeToggle />
+        <ThemeToggleSwitch />
         <h4>Roomvu Task</h4>
       </div>
       <div
@@ -39,7 +35,7 @@ const Header = () => {
         </Link>
         <span style={{ fontStyle: "italic" }}>by Ahmad Rahmani</span>
       </div>
-    </div>
+    </HeaderWrapper>
   );
 };
 
