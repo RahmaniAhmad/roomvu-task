@@ -40,7 +40,7 @@ export default function Home() {
       {data &&
         data.map((post) => {
           return (
-            <PostWrapper key={post.id}>
+            <PostWrapper data-testid="post-wrapper" key={post.id}>
               <Link href={`/post/${post.id}`}>
                 <PostDetails
                   key={post.id}
