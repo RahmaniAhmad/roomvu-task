@@ -8,12 +8,13 @@ const initialState: ThemeState = {
   isDarkMode: true,
 };
 
-if (
-  window &&
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches
-) {
-  initialState.isDarkMode = true;
+if (typeof window !== "undefined") {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    initialState.isDarkMode = true;
+  }
 }
 
 const themeSlice = createSlice({
