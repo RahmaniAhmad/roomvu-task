@@ -26,7 +26,7 @@ export const ToggleSwitch = ({
     justify-content: space-between;
     cursor: pointer;
     width: 60px;
-    height: 28px;
+    height: 26px;
     border-radius: 100px;
     border: 2px solid gray;
     position: relative;
