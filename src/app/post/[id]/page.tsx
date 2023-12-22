@@ -4,6 +4,7 @@ import Loading from "@/components/loading";
 import PostDetails from "@/components/postDetails";
 import { formatDateWithoutDay, getDateByDays } from "@/lib/dateHelper";
 import { IPost } from "@/types/types";
+import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 
@@ -22,9 +23,15 @@ const Post = ({ params }: { params: { id: number } }) => {
     };
     setData(mappedData);
   }, [params.id, post]);
+
   if (isLoading) {
     return <Loading />;
   }
+
+  if (!post) {
+    return notFound();
+  }
+
   return <>{data && <PostDetails post={data} />}</>;
 };
 

@@ -5,10 +5,11 @@ interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  isDarkMode: false,
+  isDarkMode: true,
 };
 
 if (
+  window &&
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
