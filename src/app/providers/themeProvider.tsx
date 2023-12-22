@@ -10,10 +10,17 @@ import { darkTheme, lightTheme } from "@/styles/themes";
 interface ThemeProviderProps {
   children: React.ReactNode;
 }
-
+type GlobalProps = {
+  theme: {
+    body: string;
+    text: string;
+    firstLinkColor: string;
+    linkColor: string;
+  };
+};
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: ${(props) => props.theme.body};
+    background-color: ${(props: GlobalProps) => props.theme.body};
     color: ${(props) => props.theme.text};
     transition: background-color 0.3s, color 0.3s;
   }
